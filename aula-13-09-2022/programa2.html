@@ -4,9 +4,75 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Equação do segundo grau</title>
 </head>
 <body>
+
+    <p>
+        Este programa resolve uma equação do segundo grau do tipo ax² + bx + c = 0
+    </p>
+
+    <p>
+        Insira abaixo os valores dos coeficientes a, b e c e clique no botão calcular.
+    </p>
+
+    <div>
+        a = <input id="a">
+    </div>
+
+    <div>
+        b = <input id="b">
+    </div>
+
+    <div>
+        c = <input id="c">
+    </div>
+
+    <div>
+        <button onclick="resolver()">Calcular</button>
+    </div>
+
+    <div id="x1"></div>
+
+    <div id="x2"></div>
+
+    <script>
+        function resolver()
+        {
+            var a, b, c, delta, x1, x2;
+
+            a = Number(document.getElementById("a").value)
+            b = Number(document.getElementById("b").value)
+            c = Number(document.getElementById("c").value)
+
+            delta = b**2 - 4*a*c
+
+            if(delta > 0)
+            {
+                x1 = (-b + Math.sqrt(delta)) / (2*a)
+                x2 = (-b - Math.sqrt(delta)) / (2*a)
+
+                document.getElementById("x1").innerHTML = "x1 = " + x1.toFixed(2)
+                document.getElementById("x2").innerHTML = "x2 = " + x2.toFixed(2)
+            }
+
+            if(delta === 0)
+            {
+                x1 = (-b + Math.sqrt(delta)) / (2*a)
+
+                document.getElementById("x1").innerHTML = "x = " + x1.toFixed(2)
+            }
+
+            if(delta < 0)
+            {
+                x1 = -b/(2*a)
+                x2 = Math.abs(Math.sqrt(-delta) / (2*a))
+
+                document.getElementById("x1").innerHTML = "x1 = " + x1.toFixed(2) + " + " + x2.toFixed(2) + "i"
+                document.getElementById("x2").innerHTML = "x2 = " + x1.toFixed(2) + " - " + x2.toFixed(2) + "i"
+            }
+        }
+    </script>
     
 </body>
 </html>
