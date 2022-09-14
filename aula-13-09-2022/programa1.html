@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        Nota 1 = <input id="n1">
+    </div>
+
+    <div>
+        Nota 2 = <input id="n2">
+    </div>
+
+    <div>
+        Nota 3 = <input id="n3">
+    </div>
+
+    <div>
+        <button onclick="calc()">Média</button> = <span id="m"></span>
+    </div>
+
+    <div>
+        Resultado = <span id="resultado"></span>
+    </div>
+
+    <script>
+        //Programa que calcula a média de três notas
+        function calc()
+        {
+            var x, y, z, media;
+
+            x = Number(document.getElementById("n1").value);
+            y = Number(document.getElementById("n2").value);
+            z = Number(document.getElementById("n3").value);
+
+            media = (x + y + z)/3.0;
+
+            //document.getElementById("m").value = media.toFixed(2);
+            document.getElementById("m").innerHTML = media.toFixed(2);
+
+            if(media >= 6)
+            {
+                document.getElementById("resultado").innerHTML = "Aprovado";
+            }
+            if(media < 6)
+            {
+                document.getElementById("resultado").innerHTML = "Reprovado";
+            }
+        }
+    </script>
+    
+</body>
+</html>
