@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <canvas id="c" width="600" height="400"
+        style="border:1px solid"></canvas>
+
+    <div>
+        v = <input id="v">
+
+        <button onclick="animar()">Animar</button>
+    </div>
+    
+    <script>
+        function animar()
+        {
+            var ctx = document.getElementById("c").getContext("2d");
+            var x = 30
+            var v = Number(document.getElementById("v").value);
+
+            function desenharCirculo()
+            {
+                x = x + v
+
+                if (x > 580 || x < 20)
+                {
+                    v = -v
+                }
+
+                ctx.clearRect(0, 0, 600, 400)
+
+                ctx.beginPath()
+                ctx.strokeStyle = "blue"
+                ctx.arc(x, 100, 20, 0, 2*Math.PI)
+                ctx.stroke()
+            }
+
+            setInterval(desenharCirculo, 100)
+        }
+    </script>
+    
+</body>
+</html>
