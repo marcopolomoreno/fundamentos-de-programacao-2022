@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        Indique abaixo as temperaturas das cinco cidades:
+    </p>
+
+    <div>
+        Ji-Paraná: <input type="text" id="tJP">
+    </div>
+
+    <div>
+        Porto Velho: <input type="text" id="tPV">
+    </div>
+
+    <div>
+        Cacoal: <input type="text" id="tCC">
+    </div>
+
+    <div>
+        Vilhena: <input type="text" id="tVH">
+    </div>
+
+    <div>
+        Ouro Preto: <input type="text" id="tOP">
+    </div>
+
+    <button onclick="informar()" style="font-size:20pt">Informar</button>
+
+    <div id="tMedia"></div>
+    <div id="cidades"></div>
+
+    <script>
+        function informar()
+        {
+            var cidades = ""
+            var tJP = Number(document.getElementById("tJP").value)
+            var tPV = Number(document.getElementById("tPV").value)
+            var tCC = Number(document.getElementById("tCC").value)
+            var tVH = Number(document.getElementById("tVH").value)
+            var tOP = Number(document.getElementById("tOP").value)
+
+            var tMedia = (tJP + tPV + tCC + tVH + tOP)/5
+            document.getElementById("tMedia").innerHTML = "Temperatura média das cidades: " 
+                        + tMedia + " ºC"
+
+            if (tJP > tMedia)
+                cidades = cidades + "Ji-Paraná, "
+
+            if (tPV > tMedia)
+                cidades = cidades + "Porto Velho, "
+
+            if (tCC > tMedia)
+                cidades = cidades + "Cacoal, "
+
+            if (tVH > tMedia)
+                cidades = cidades + "Vilhena, "
+
+            if (tOP > tMedia)
+                cidades = cidades + "Ouro Preto, "
+
+            document.getElementById("cidades").innerHTML = "Cidades com temperatura" +
+                    " acima da média:" + cidades
+        }
+    </script>
+</body>
+</html>
