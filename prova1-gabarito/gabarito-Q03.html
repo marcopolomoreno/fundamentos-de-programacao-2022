@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        Primeiro número: <input type="text" id="n1">
+    </div>
+
+    <div>
+        Segundo número: <input type="text" id="n2">
+    </div>
+
+    <div>
+        Terceiro número: <input type="text" id="n3">
+    </div>
+
+    <div>
+        <button onclick="calcular()">Calcular</button>
+    </div>
+
+    <br>
+
+    <div>
+        Média = <span id="media"></span>
+    </div>
+
+    <div>
+        O maior número é o <span id="maior"></span>
+    </div>
+
+    <script>
+        function calcular()
+        {
+            var n1, n2, n3, media, maior
+
+            n1 = Number(document.getElementById("n1").value)
+            n2 = Number(document.getElementById("n2").value)
+            n3 = Number(document.getElementById("n3").value)
+
+            media = (n1 + n2 + n3)/3
+
+            if (n1 > n2 && n1 > n3)
+                maior = n1
+
+            if (n2 > n1 && n2 > n3)
+                maior = n2
+
+            if (n3 > n1 && n3 > n2)
+                maior = n3
+
+            document.getElementById("media").innerHTML = media
+            document.getElementById("maior").innerHTML = maior
+        }
+    </script>
+
+</body>
+</html>
