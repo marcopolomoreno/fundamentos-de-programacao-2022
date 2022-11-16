@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        Salário: R$ <input type="text" id="salario">
+    </div>
+
+    <br>
+
+    <div>
+        <button onclick="calcular()">Calcular contribuição</button>
+    </div>
+
+    <br>
+
+    <div>
+        Contribuição: R$ <span id="contribuicao"></span>
+    </div>
+
+    <script>
+        function calcular()
+        {
+            var salario = Number(document.getElementById("salario").value);
+            var desconto, contribuicao;
+
+            if (salario > 10000)
+                desconto = 0
+
+            if (salario >= 7000 && salario <= 10000)
+                desconto = 0.1
+                
+            if (salario >= 4000 && salario <= 6999.99)
+                desconto = 0.25
+
+            if (salario < 4000)
+                desconto = 0.5
+
+            contribuicao = 200*(1-desconto)
+
+            document.getElementById("contribuicao").innerHTML = contribuicao
+        }
+    </script>    
+
+</body>
+</html>
