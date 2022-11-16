@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        N = <input type="text" id="n">
+    </div>
+    <button onclick="calc()">Fatorial</button>
+    <div id="resultado"></div>
+    <script>
+        function calc()
+        {
+            var n = Number(document.getElementById("n").value)
+            var fat = 1;
+
+            for (var k=1; k<=n; k++)
+            {
+                fat = fat*k
+            }
+            document.getElementById("resultado").innerHTML = fat
+        }
+    </script>
+</body>
+</html>

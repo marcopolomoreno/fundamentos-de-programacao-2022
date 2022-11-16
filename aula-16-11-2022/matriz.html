@@ -1,0 +1,17 @@
+<script>
+    var n = 30, conteudo = ""
+
+    for(var k=1; k<=n; k++)
+    {
+        for(var p=1; p<=n; p++)
+        {
+            if (k === p)
+            {
+                conteudo = conteudo + "1 "
+            }
+            else conteudo = conteudo + "0 "
+        }
+        conteudo = conteudo + "\n"
+    }
+    alert(conteudo)
+</script>
