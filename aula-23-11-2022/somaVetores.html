@@ -1,0 +1,16 @@
+<script>
+    var v1 = [], v2 = [], soma = []
+
+    for(var k=0; k<=9; k=k+1)
+    {
+        v1[k] = Math.round( 100*Math.random() )
+        v2[k] = Math.round( 100*Math.random() )
+    }
+
+    for(var k=0; k<=9; k=k+1)
+    {
+        soma[k] = v1[k] + v2[k]
+    }
+
+    alert(v1 + "\n" + v2 + "\n" + soma)
+</script>

@@ -1,0 +1,50 @@
+<script>
+    //Construção das matrizes 4x4 vazias
+    var mat1 = Array(4), mat2 = Array(4), produto = Array(4)
+    var texto = ""
+
+    for(var k=0; k<=3; k++)
+    {
+        mat1[k] = Array(4)
+        mat2[k] = Array(4)
+        produto[k] = Array(4)
+    }
+
+    //Atribuição de valores aos elementos das matrizes
+    for(var k=0; k<=3; k++)
+    {
+        for(var p=0; p<=3; p++)
+        {
+            mat1[k][p] = p+1
+
+            if (k===p)
+                mat2[k][p] = 0
+                else mat2[k][p] = 1
+        }
+    }
+
+    var s;
+    //Multiplicação das matrizes
+    for(var k=0; k<=3; k++)
+    {
+        for(var p=0; p<=3; p++)
+        {
+            s = 0;
+            for(var q=0; q<=3; q++)
+                s = s + mat1[k][q]*mat2[q][p]
+            produto[k][p] = s
+        }
+    }
+
+    //Impressão da matriz na tela
+    for(var k=0; k<=3; k++)
+    {
+        for(var p=0; p<=3; p++)
+        {
+            texto = texto + produto[k][p] + "   "
+        }
+        texto = texto + "\n"
+    }
+
+    alert(texto)
+</script>

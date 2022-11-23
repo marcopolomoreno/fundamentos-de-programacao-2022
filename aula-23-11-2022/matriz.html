@@ -1,0 +1,32 @@
+<script>
+    //Construção da matriz 3x3 vazia
+    var mat = Array(3), texto = ""
+
+    for(var k=0; k<=2; k++)
+    {
+        mat[k] = Array(3)
+    }
+
+    //Atribuição de valores aos elementos da matriz
+    for(var k=0; k<=2; k++)
+    {
+        for(var p=0; p<=2; p++)
+        {
+            if (k===p)
+                mat[k][p] = 1
+                else mat[k][p] = 0
+        }
+    }
+
+    //Impressão da matriz na tela
+    for(var k=0; k<=2; k++)
+    {
+        for(var p=0; p<=2; p++)
+        {
+            texto = texto + mat[k][p] + "   "
+        }
+        texto = texto + "\n"
+    }
+
+    alert(texto)
+</script>
