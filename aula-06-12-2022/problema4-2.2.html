@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        v = (   <input id="n0", size="3">, 
+                <input id="n1", size="3">, 
+                <input id="n2", size="3">, 
+                <input id="n3", size="3">, 
+                <input id="n4", size="3"> )
+    </div>
+    
+    <button onclick="calc()">Verificar</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function calc()
+        {
+            var n = 4, v = [], s = 0;
+
+            //Montagem do vetor
+            for (var k=0; k<=n; k++)
+            {
+                v[k] = Number( document.getElementById("n"+k).value )
+            }
+
+            //Verificação
+            for (var k=0; k<=n; k++)
+            {
+                if (v[k] !== v[n-k])
+                {
+                    s = 1
+                }
+            }
+
+            if (s === 0)
+            {
+                document.getElementById("resultado").innerHTML = "É palíndromo"
+            }
+            else
+            {
+                document.getElementById("resultado").innerHTML = "Não é palíndromo"
+            }
+        }
+    </script>
+
+</body>
+</html>

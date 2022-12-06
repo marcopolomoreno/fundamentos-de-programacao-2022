@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        Número de termos = <input id="n">
+    </div>
+
+    <button onclick="calc()">Calcular</button>
+    
+    <div>
+        Resultado = <span id="soma"></span>
+    </div>
+
+    <script>
+        function calc()
+        {
+            var n = Number(document.getElementById("n").value)
+            var soma = 0;
+
+            for (var k=1; k<=n; k++)
+            {
+                soma = soma + 1/Math.pow(2, k)
+            }
+
+            document.getElementById("soma").innerHTML = soma
+        }
+    </script>
+
+</body>
+</html>
